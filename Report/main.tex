@@ -1,0 +1,35 @@
+\documentclass[oneside,openright,titlepage,numbers=noenddot,headinclude,
+               footinclude=true,cleardoublepage=empty,
+               BCOR=5mm,paper=a4,fontsize=11pt]{scrreprt}
+
+\input{config}
+
+\begin{document}
+\frenchspacing
+\raggedbottom
+\pagestyle{empty}
+\pagestyle{plain}
+\pagenumbering{alph}
+
+
+\pagenumbering{arabic}
+%%%First page
+\include {title_page}
+
+%%%Sections
+\input {sections/introduction/intro}
+\input {sections/discussion/discussion}
+\input {sections/results/result}
+\input {sections/conclusion/conclusion}
+
+
+%%\appendix
+%%\appendixpage
+%%\addappheadtotoc
+
+\include {sections/references/bibliography}
+
+
+
+
+\end{document}
