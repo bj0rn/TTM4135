@@ -1,6 +1,6 @@
 \subsection {Part 2: Access control and Apache}
 
-\newline
+
 \noindent
 In order to be able to develop and run a simple Webpage it is necessary to install and configure a webserver. 
 We are using  the Apache HTTP Server, release 2.4.3. This software is downloadable as tar archive from mirrors 
@@ -27,29 +27,42 @@ well known persons and one well known group of people. To be able to realize thi
 the webserver is configured to check the used certificate of a visitor. 
 If this certificate refers to one of these persons or to the group access is granted, 
 otherwise a visitor would get an SSL error page. 
-
 \newline
+
 \noindent
 {\bf Q3. What are the access permissions to your web server’s configuration files,
 server certificate and the corresponding private key? Comment on possible
 attacks to your web server due to inappropriate file permissions.}
 \newline
+
 \noindent
-All files for this task are owned by the generic user of our group, gr09.  
-This disallows attackers to get a root-shell just by exploiting the apache software, so it is quite obvious that running a webserver as root user would be worse for security reasons.
-The specific permissions on the files are also important since unwanted reading, writing or even executing of the files are a security harm.
-It does not make sense to execute or write on neither the certificate nor the private key after they have been created.
-Clearly nobody else then the owner should be able to read the private key, so only he should have reading permissions.
-In contrast the server certificate have to been readable for other people both inside and outside the users' group.
-The configuration files have to been readable and executable for the gr09 user because the apache webserver gets started with his permissions.
-Since this file possibly get changed often it is an good idea to make it writable as well. 
-It can not be assured that other user are not needing this file so it should be okay to grant them read permissions.
-All in all it ends up to the following permissions denoted numerically: private key 400, server certificate 444 and configuration files 744.
-Wrong file permissions are a risk when the webapplication running on the server is vulnerable to file inclusion or file disclosure attacks.
-With the help of this and in the case of wrong file permissions an attacker could as example read the private key and fake therefore our identity to other applications.
-It would be even worser when the attacker is able to write to files since then all doors to manipulate our certificates or configuration are opened.
+All files for this task are owned by the generic user of our group, gr09. This disallows attackers to get a root-shell just by exploiting the apache software, so it is quite obvious that running a webserver as root user would be worse for security reasons. The specific permissions on the files are also important since unwanted reading, writing or even executing of the files are a security harm. It does not make sense to execute or write on neither the certificate nor the private key after they have been created. Clearly nobody else then the owner should be able to read the private key, so only he should have reading permissions. In contrast the server certificate have to been readable for other people both inside and outside the users' group. The configuration files have to been readable and executable for the gr09 user because the apache webserver gets started with his permissions. Since this file possibly get changed often it is an good idea to make it writable as well. 
+It can not be assured that other user are not needing this file so it should be okay to grant them read permissions. All in all it ends up to the following permissions denoted numerically: private key 400, server certificate 444 and configuration files 744. 
+\newline
+
+\noindent
+Wrong file permissions are a risk when the webapplication running on the server is vulnerable to file inclusion or file disclosure attacks. With the help of this and in the case of wrong file permissions an attacker could as example read the private key and fake therefore our identity to other applications. It would be even worser when the attacker is able to write to files since then all doors to manipulate our certificates or configuration are opened.
+\newline
+
 
 \noindent
 {\bf Q4. Web servers offering weak cryptography are subject to several attacks.
 What kind of attacks are feasible? How did you configure your server to prevent such attacks?}
+\newline
+
+\noindent
+Web servers using weak cryptography are subject to these, and other, attacks:
+
+\begin {itemize}
+
+\item Factorisation of RSA modulus. Using a man in the middle attack to in order to get the publicly known values an attacker may be able to factor out the secret key. For this attack to be feasible, the private key must be small. E.g less than 1024 bits. To protect against these kinds of attack it sufficient enough to use recommended key lengths. \cite {nisc}  
+
+\item Bruteforce attack. Here the attacker tries every possible key inside a given key space. The length of the key determines the practical feasability of performing the attack. The longer the key, the more exponentially difficult it is to break it. 
+
+\item Chosen ciphertext attack. The attacker gathers informations by sending choosing ciphertexts, to the victim to obtain the encryption under an unknown key. By repeatedly doing so the victim may leak information that can help the attacker to figure out the key. The best counter measure for this attack is to switch to an cipher that is know to be resilient against these attacks. 
+\end {itemize}
+
+\noindent
+For the first two attacks it really comes down to the length of the private key. If the private key is sufficiently large these attacks is unfeasible. When it comes to the third attack, this is already resolved in the RSA using some sort of padding scheme. With it, the implementation should not leak any information about the key. %%Citation it is covered in the slides 
+
 
