@@ -1,6 +1,6 @@
 \documentclass[oneside,openright,titlepage,numbers=noenddot,headinclude,
                footinclude=true,cleardoublepage=empty,
-               BCOR=5mm,paper=a4,fontsize=11pt]{scrreprt}
+               BCOR=5mm,paper=a4,fontsize=11pt]{article}
 
 \input{config}
 
@@ -18,17 +18,18 @@
 
 %%%Sections
 \input {sections/introduction/intro}
-\input {sections/discussion/discussion}
 \input {sections/results/result}
+\input {sections/discussion/discussion}
 \input {sections/conclusion/conclusion}
+
 
 
 %%\appendix
 %%\appendixpage
 %%\addappheadtotoc
 
-\include {sections/references/bibliography}
-
+\bibliographystyle{plain}
+\bibliography {bibliography}
 
 
 

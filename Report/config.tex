@@ -30,7 +30,7 @@
 %%% Packages
 
 
-\usepackage{scrextend}
+%%\usepackage{scrextend}
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{tabularx}
@@ -41,57 +41,9 @@
 \usepackage{appendix}
 \usepackage[nohyperlinks]{acronym}
 
-%%% Fine-tuning of this classicthesis
-\newcounter{dummy} % Fikser hyperref-feil (?)
-\usepackage{textcomp} % Fikser feilmelding om at fonter er bytta ut
-\usepackage{scrhack} % Fikser warnings i listings
 
-\usepackage{xspace} % Fikser mellomrom etter makroer.
-\usepackage{mparhack} % Margins, how do they work.
-\usepackage{fixltx2e} % Generell "fiks" på diverse andre fails
-                      % (ser ut til å funke?)
-
-%%% Hyperref setup
-\hypersetup{
-    %draft, % Fjerner alle lenker. Kjekt for 
-    colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
-    % Fjern kommenteringa på lenkene under for svarte lenker
-    % colorlinks=false, linktocpage=false, pdfborder={0 0 0},
-    breaklinks=true, pdfpagemode=UseNone, pageanchor=true, 
-    pdfpagemode=UseOutlines,plainpages=false, bookmarksnumbered, 
-    bookmarksopen=true, bookmarksopenlevel=1, hypertexnames=true, 
-    pdfhighlight=/O,
-    urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen, 
-    pdftitle={\ourTitle},
-    pdfauthor={\textcopyright\ C. Bru et al, \ourUni, \ourFaculty},
-    pdfsubject={\ourProject},
-}
-
-\renewcommand{\bflabel}[1]{{#1}\hfill}
-
-\usepackage[usenames,dvipsnames]{xcolor}
-%\usepackage[chapter]{minted}
-%\usepackage{minted}
-\newenvironment{code}{\captionsetup{type=listing}\centering}{}
-%%\renewcommand\listoflistingscaption{List of Listings}
-
-\usepackage{amsmath, amssymb}
-%% Note: eulermath is sweet for equations, but requires a 500 mb font bundle
-%% installed. Better leave it off and remember to flip it on before sending.
-\usepackage[dottedtoc,%eulermath,%listings,
-            floatperchapter,%drafting
-            ]{classicthesis}
-\setlength{\parskip}{\bigskipamount}
-\setlength{\parindent}{0pt}
 \usepackage{tikz}
 
-
-
-\setcounter{secnumdepth}{3} % Numbering depth for subsections
-\setcounter{tocdepth}{3}    % Depth of subsection to be included in table of contents
-
-
-%\renewcommand{\lstlistlistingname}{List of Listings
 
 %%Adjust margins
 \usepackage[margin = 1.2in]{geometry}

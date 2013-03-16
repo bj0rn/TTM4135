@@ -1,3 +1,22 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{nisc}
+Nist recommendation.
+\newblock Online, accessed 16 - march - 2013.
+
+\bibitem{cipher}
+Networking4All.
+\newblock Cipher suit.
+\newblock Online, accessed 16 - march - 2013.
+
+\bibitem{md5Networking}
+Networking4All.
+\newblock Weaknesses in ssl certificates with a md5 signature algorithm.
+\newblock Online, accessed 16 - march - 2013.
+
+\bibitem{md5Wiki}
+Wikipedia.
+\newblock Md5, 2013.
+\newblock Online, accessed 16 - march - 2013.
 
 \end{thebibliography}

@@ -1,1 +1,30 @@
 %some stuff
+
+\subsection {Part 1: Certificate authority}
+
+As result of part 1, we generated personal certificates for the server. Then established the group CA in the certificate hierarchy of NTNU and generated the certificate for the apache web server. 
+\newline
+
+\noindent
+{\bf Q1. Comment on security related issues regarding the cryptographic algorithms used to generate and sign your groups web server certificate (key length, algorithm, etc.).}
+\newline
+
+\noindent
+The SSL certificate has a 2048-bit length private key. This is the same as the recommended minimum key length advised by NIST for asymmetric encryption. This key length is expected to be sufficient until 2030. \cite{nisc}This implies a key length that is sufficient for securing the certificates in this assignments. 
+\newline
+
+\noindent
+Unfortunately, we used the default message digest algorithm, MD5, to sign our certificates. MD5 offers a short hash value making it vulnerable to collisions. Previous research has shown that is possible to produce collisions with relatively ease. A group of researchers described how on could create a pair of files having the same MD5 hash. Later a group of researchers shown, with using this technique, how one could generate a fraudulent SSL certificate derived from a valid one. They showed that the certificate will be accepted as valid. Due these advances, the MD5 is considered cryptographic broken and unsuitable for further use. We need to emphasize that no wild attacks has been reported using this technique, but it should still be avoided. \cite {md5Wiki, md5Networking}
+\newline
+
+\noindent
+Further analysis of the web page also reveals that we support more than we should. The site will accept weak cipher suits. Note that during the SSL handshake, a cipher suite that is appropriate for both client and server is chosen. In our case we allow the client to choose an cipher suite with encryption lower than 128 bits, which is consider in secure. Normally modern browsers don't support weak ciphers, but on our site hackers could force a lower encryption session. However, we should emphasize that the risk is minimal since the browsers won't support weak ciphers. \cite {cipher}
+\newline
+
+\noindent
+The fix is relatively issue though. We just modified the configuration files to support higher cipher suits.  
+
+
+
+
+
