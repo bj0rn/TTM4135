@@ -1,10 +1,30 @@
 \subsection {Part 2: Access control and Apache}
 
-
+In order to be able to develop and run a simple Webpage it is necessary to install and configure a webserver. 
+We are using  the Apache HTTP Server, release 2.4.3. This software is downloadable as tar archive from mirrors 
+which are listed on the official apache website [quelle1]. To ensure that the downloaded archive is neither manipulated 
+nor corrupt a pgp signature is offered on the apache website. 
+\newline
 \noindent
 {\bf Q2. Explain what you have achieved through each of these verifications.
 What is the name of the person signing the Apache release?}
 \newline
+
+The verification of this signature proves the integrity and the authenticity of the downloaded data, 
+whereby the check for the latter shows, that this release is signed by Jim Jagielski, 
+one of the founders of the Apache Software Foundation. 
+\newline
+
+The installation of the server software is pretty simple and is descriped in the official Apache Documentation [quelle2].
+After the installation it is necessary to configure the server and to set the right filepermissions. 
+We configured the server in a separated file group09.conf which gets included by the common httpd.conf. 
+We are using two virtual hosts, the first is listening on port 8141 and arranged for plain http access to our application.
+The second one is listening on port 8142 and requires SSL over http. 
+Furthermore some parts of the application should only accessible for certain, 
+well known persons and one well known group of people. To be able to realize this, 
+the webserver is configured to check the used certificate of a visitor. 
+If this certificate refers to one of these persons or to the group access is granted, 
+otherwise a visitor would get an SSL error page.
 
 \noindent
 {\bf Q3. What are the access permissions to your web server’s configuration files,
