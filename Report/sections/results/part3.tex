@@ -15,13 +15,20 @@ When PHP was installed on apache we started  create table  with username and pas
 On the login page we used a cookie to store the username which is helpful for the user when he wants to login several times from the same device. After a successful login we are setting up the sessions variables. The use of sessions is also comfortable for the user since he has not to login again when he is visiting the site again from the same device without a previous logout. Logged in users  are allowed to download the report file . The signup page is only accessible for users with valid ssl certificate. On this page certified group members can add or delete users.
 \newline
 
+\noindent
 {\bf Q5. What kind of malicious attacks is your web application (PHP) vulnerable to? Describe them brifly, and point out what countermeasures you have
 developed in your code to prevent such attacks.}
 \newline
+
 \noindent
-Since the application uses a mysql-database to save certain user data, the application is naturally vulnerable against sql injection attacks, which are used to read, manipulate or delete entrys from the database. To prevent those attacks we are using prepared SQL-statements. Furthermore we are sanitizing all user input via preg_match() with a self-defined whitelist. The allowed signs are digits, all normal characters and the special characters @,!,.,-,_,.and +. This whitelist offers also protection against cross site scripting attacks since we are not allowing signs which are mandatory to start such an attack. Cross Site Scripting means that malicious javascript code is injected to the webapplication and gets executed on the clients pc. \newline
+Since the application uses a mysql-database to save certain user data, the application is naturally vulnerable against sql injection attacks, which are used to read, manipulate or delete entrys from the database. To prevent those attacks we are using prepared SQL-statements. Furthermore we are sanitizing all user input via $preg_match()$ with a self-defined whitelist. The allowed signs are digits, all normal characters and the special characters $@,!,.,-,_,.and +$. This whitelist offers also protection against cross site scripting attacks since we are not allowing signs which are mandatory to start such an attack. Cross Site Scripting means that malicious javascript code is injected to the webapplication and gets executed on the clients pc. 
+\newline
+
+\noindent
 With protection against cross site scripting we have also improved protection against session hijacking since this kind attacks often rely on such a vulnerability. During a session hijacking attack the information which are used to remember a certain user are stealed and used by an attacker to access the application with the rights of the user. Unfortunately we cannot offer protection against other client side attacks which result in a leak of the session information. Nevertheless we are saving the user ip within the session and validate this to prevent hijacking via the internet, however attacks within the same network are still feasible.
 \newline
+
+\noindent
 Other common kinds of vulnerabilities in php application are file inclusions and file disclosure vulnerabilities allowing an attacker to add or read files on the server. Our application is secure against them since we are using hardcoded html links instead of the php include function and also a hardcoded filename for the download function.
 
 
