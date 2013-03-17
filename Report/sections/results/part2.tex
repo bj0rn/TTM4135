@@ -20,13 +20,13 @@ one of the founders of the Apache Software Foundation.
 \newline
 
 \noindent
-The installation of the server software is descriped in the official Apache Documentation \cite{quelle2}.
+The installation of the server software is described in the official Apache Documentation \cite{quelle2}.
 After the installation it is necessary to configure the server and to set the right file permissions. 
 We configured the server in a separated file group09.conf which gets included by the common httpd.conf. 
 We are using two virtual hosts, the first one is listening on port 8141 and arranged for plain HTTP access to our application.
 The second one is listening on port 8142 and requires HTTPS. 
-Furthermore some parts of the application should only be accessible for group members and the ttm4135 staff. To be able to realize this 
-the webserver is configured to check the used certificate of a visitor. 
+Furthermore some parts of the application should only be accessible for group members and the ttm4135 staff. To be able to realise this 
+the web server is configured to check the used certificate of a visitor. 
 If this certificate refers to group or staff member access is granted, 
 otherwise the visitor would get an SSL error page. 
 \newline
@@ -47,7 +47,7 @@ It can not be assured that other users are not needing this file so it should be
 \newline
 
 \noindent
-Wrong file permissions are a risk when the web application running on the server is vulnerable to file inclusion or file disclosure attacks. In the case of a succesful attack and wrong file permissions an attacker could as an example read the private key and fake our identity. It would be even worser if the attacker is able to write to files, then the attacker is free to manipulate our certificates or configurations \cite{InclDiscl}.
+Wrong file permissions are a risk when the web application running on the server is vulnerable to file inclusion or file disclosure attacks. In the case of a successful attack and wrong file permissions an attacker could as an example read the private key and fake our identity. It would be even worser if the attacker is able to write to files, then the attacker is free to manipulate our certificates or configurations \cite{InclDiscl}.
 \newline
 
 
