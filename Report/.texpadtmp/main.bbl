@@ -1,7 +1,7 @@
 \begin{thebibliography}{10}
 
 \bibitem{nisc}
-Nist recommendation.
+{NIST} recommendation.
 \newblock \url{http://www.keylength.com/en/4/}.
 \newblock Online, accessed 16 - march - 2013.
 
@@ -11,8 +11,8 @@ Nist recommendation.
 \newblock Online, accessed 17 - march - 2013.
 
 \bibitem{md5Harmful}
-{Alexander Sotirov, Marc Stevens, Jacob Appelbaum, Arjen Lenstra, David Molnar,
-  Dag Arne Osvik, Benne de Weger}.
+{A. Sotirov, M. Stevens, J. Appelbaum, A. Lenstra, D. Molnar, D. Arne Osvik, B.
+  de Weger}.
 \newblock {MD5} considered harmful today - creating a rogue ca certificate.
 \newblock \url{http://www.win.tue.nl/hashclash/rogue-ca/}.
 \newblock Online, accessed 17 - march - 2013.

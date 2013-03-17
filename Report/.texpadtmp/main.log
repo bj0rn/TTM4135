@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  17 MAR 2013 21:19
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  17 MAR 2013 21:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -830,7 +830,7 @@ Here is how much of TeX's memory you used:
 sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 Output written on "/Users/bj0rn/Programming/School/NTNU/4 sem/TTM4135/Report/Re
-port/.texpadtmp/main.pdf" (6 pages, 126730 bytes).
+port/.texpadtmp/main.pdf" (6 pages, 126707 bytes).
 PDF statistics:
  160 PDF objects out of 1000 (max. 8388607)
  143 compressed objects within 2 object streams
