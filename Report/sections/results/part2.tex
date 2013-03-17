@@ -2,10 +2,10 @@
 
 
 \noindent
-In order to be able to develop and run a simple Webpage it is necessary to install and configure a webserver. 
+In order to be able to develop and run a simple webpage it is necessary to install and configure a webserver. 
 We are using  the Apache HTTP Server, release 2.4.3. This software is downloadable as tar archive from mirrors 
 which are listed on the official apache website \cite{quelle1}. To ensure that the downloaded archive is neither manipulated 
-nor corrupt a pgp signature is offered on the apache website. 
+nor corrupt a PGP signature is offered on the Apache website. 
 \newline
 
 \noindent
@@ -20,16 +20,19 @@ one of the founders of the Apache Software Foundation.
 \newline
 
 \noindent
-The installation of the server software is pretty simple and is descriped in the official Apache Documentation \cite{quelle2}.
-After the installation it is necessary to configure the server and to set the right filepermissions. 
+The installation of the server software is descriped in the official Apache Documentation \cite{quelle2}.
+After the installation it is necessary to configure the server and to set the right file permissions. 
 We configured the server in a separated file group09.conf which gets included by the common httpd.conf. 
-We are using two virtual hosts, the first is listening on port 8141 and arranged for plain http access to our application.
-The second one is listening on port 8142 and requires SSL over http. 
-Furthermore some parts of the application should only accessible for certain, 
-well known persons and one well known group of people. To be able to realize this, 
+We are using two virtual hosts, the first one is listening on port 8141 and arranged for plain HTTP access to our application.
+The second one is listening on port 8142 and requires HTTPS. 
+Furthermore some parts of the application should only be accessible for group members and the ttm4135 staff. To be able to realize this 
 the webserver is configured to check the used certificate of a visitor. 
-If this certificate refers to one of these persons or to the group access is granted, 
-otherwise a visitor would get an SSL error page. 
+If this certificate refers to group or staff member access is granted, 
+otherwise the visitor would get an SSL error page. 
+\newline
+\noindent
+Furthermore we installed and configured a fully operational SVN repository during the completion of this part.
+Using the apache servers built-in authentication methods, the repository is only accessible to users that can provide valid usernames and passwords. The repository is also only accessible over an https connection, which protects the integrity of the communication. This authentication method is vulnerable for bruteforcing but a sufficient password strength makes this kind of attack inefficient. Since we use a SSL encrypted connection to submit this data eavesdropping is also hard to accomplish. The users and passwords are created with the htpasswd tool with the -s flag. This flag enables the use of SHA encryption for the passwords instead the default used MD5.
 \newline
 
 \noindent
@@ -39,12 +42,12 @@ attacks to your web server due to inappropriate file permissions.}
 \newline
 
 \noindent
-All files for this task are owned by the generic user of our group, gr09. This disallows attackers to get a root-shell just by exploiting the apache software, so it is quite obvious that running a webserver as root user would be worse for security reasons. The specific permissions on the files are also important since unwanted reading, writing or even executing of the files are a security harm. It does not make sense to execute or write on neither the certificate nor the private key after they have been created. Clearly nobody else then the owner should be able to read the private key, so only he should have reading permissions. In contrast the server certificate have to been readable for other people both inside and outside the users' group. The configuration files have to been readable and executable for the gr09 user because the apache webserver gets started with his permissions. Since this file possibly get changed often it is an good idea to make it writable as well. 
-It can not be assured that other user are not needing this file so it should be okay to grant them read permissions. All in all it ends up to the following permissions denoted numerically: private key 400, server certificate 444 and configuration files 744. \cite {linuxsecurity} 
+All files for this task are owned by the generic user of our group, gr09. This disallows attackers to get a root-shell just by exploiting the apache software. The specific permissions on the files are also important since unwanted reading, writing or even executing of the files are a security harm. It does not make sense to execute or write on neither the certificate nor the private key after they have been created. Clearly nobody else then the owner should be able to read the private key, so only he should have reading permissions. In contrast the server certificate have to been readable for other people both inside and outside the users' group. The configuration files have to been readable and executable for the gr09 user because the apache webserver gets started with his permissions. Since this file possibly have to be altered it is an good idea to make it writable as well. 
+It can not be assured that other users are not needing this file so it should be okay to grant them read permissions. All in all it ends up to the following permissions, denoted numerically: private key 400, server certificate 444 and configuration files 744. \cite {linuxsecurity} 
 \newline
 
 \noindent
-Wrong file permissions are a risk when the web application running on the server is vulnerable to file inclusion or file disclosure attacks. With the help of this and in the case of wrong file permissions an attacker could as an example read the private key and fake our identity to other applications. This would be even worse if the attacker is able to write to files, then the attacker is free to manipulate our certificates or configurations \cite{InclDiscl}.
+Wrong file permissions are a risk when the web application running on the server is vulnerable to file inclusion or file disclosure attacks. In the case of a succesful attack and wrong file permissions an attacker could as an example read the private key and fake our identity. It would be even worser if the attacker is able to write to files, then the attacker is free to manipulate our certificates or configurations \cite{InclDiscl}.
 \newline
 
 
@@ -58,18 +61,14 @@ Web servers using weak cryptography are subject to these, and other, attacks:
 
 \begin {itemize}
 
-\item Factorisation of RSA modulus. Using a man in the middle attack to in order to get the publicly known values an attacker may be able to factor out the secret key. For this attack to be feasible, the private key must be small. E.g less than 1024 bits. To protect against these kinds of attack it sufficient enough to use recommended key lengths. \cite {nisc}  
+\item Factorisation of RSA modulus. Using a man in the middle attack to in order to get the publicly known values an attacker may be able to factor out the secret key. For this attack to be feasible, the private key must be small, e.g. less than 1024 bits. To protect against these kinds of attack it is sufficient enough to use recommended key lengths. \cite {nisc}  
 
-\item Bruteforce attack. Here the attacker tries every possible key inside a given key space. The length of the key determines the practical feasability of performing the attack. The longer the key, the more exponentially difficult it is to break it. 
+\item Bruteforce attack. Here the attacker tries every possible key inside a given key space. The length of the key determines the practical feasability of performing the attack. The longer the key, the more exponentially difficult is it to break. 
 
 \item Chosen ciphertext attack. The attacker gathers informations by sending choosing ciphertexts, to the victim to obtain the encryption under an unknown key. By repeatedly doing so the victim may leak information that can help the attacker to figure out the key. The best counter measure for this attack is to switch to an cipher that is know to be resilient against these attacks. 
 \end {itemize}
 
 
-\noindent
-Furthermore we installed and configured a fully operational SVN repository during the completion of this part.
-Using the apache servers built-in authentication methods, the repository is only accessible to users that can provide valid usernames and passwords. The repository is also only accessible over an https connection, which protects the integrity of the communication. This authentication method is vulnerable for bruteforcing but a sufficient password strength makes this kind of attack inefficient. Since we use a SSL encrypted connection to submit this data eavesdropping is also hard to accomplish. The users and password are created with the htpasswd tool with the -s flag and saved on the webserver. This flag enables the use of SHA encryption for the passwords instead the default used md5.
-\newline
 
 
 
