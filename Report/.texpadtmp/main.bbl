@@ -11,15 +11,15 @@ Php install.
 \newblock Online, accessed 17 - march - 2013.
 
 \bibitem{md5Harmful}
-Jacob Appelbaum Arjen Lenstra David Molnar Dag Arne Osvik Benne de~Weger
-  Alexander~Sotirov, Marc~Stevens.
-\newblock Md5 considered harmful today - creating a rogue ca certificate.
+{Alexander Sotirov, Marc Stevens, Jacob Appelbaum, Arjen Lenstra, David Molnar,
+  Dag Arne Osvik, Benne de Weger}.
+\newblock {MD5} considered harmful today - creating a rogue ca certificate.
 \newblock \url{http://www.win.tue.nl/hashclash/rogue-ca/}.
 \newblock Online, accessed 17 - march - 2013.
 
 \bibitem{md5Study}
-T.~Highland J.~Black, M.~Cochran.
-\newblock A study of the md5 attacks: Insights and improvements.
+{J. Black, M. Cochran, T. Highland}.
+\newblock A study of the {MD5} attacks: Insights and improvements.
 \newblock \url{http://www.cs.colorado.edu/~jrblack/papers/md5e-full.pdf}.
 \newblock Online, accessed 17 - march - 2013.
 
@@ -45,14 +45,14 @@ Networking4All.
 
 \bibitem{sqlinjection}
 OWASP.
-\newblock Sql injection prevention cheat sheet.
+\newblock {SQL} injection prevention cheat sheet.
 \newblock
   \url{https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet}.
 \newblock Online, accessed 17 - march - 2013.
 
 \bibitem{xss}
 OWASP.
-\newblock Xxs (cross site scripting) prevention cheat sheet.
+\newblock {XXS} (cross site scripting) prevention cheat sheet.
 \newblock
   \url{https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet}.
 \newblock Online, accessed 17 - march - 2013.
