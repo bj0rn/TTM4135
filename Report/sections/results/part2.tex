@@ -40,11 +40,11 @@ attacks to your web server due to inappropriate file permissions.}
 
 \noindent
 All files for this task are owned by the generic user of our group, gr09. This disallows attackers to get a root-shell just by exploiting the apache software, so it is quite obvious that running a webserver as root user would be worse for security reasons. The specific permissions on the files are also important since unwanted reading, writing or even executing of the files are a security harm. It does not make sense to execute or write on neither the certificate nor the private key after they have been created. Clearly nobody else then the owner should be able to read the private key, so only he should have reading permissions. In contrast the server certificate have to been readable for other people both inside and outside the users' group. The configuration files have to been readable and executable for the gr09 user because the apache webserver gets started with his permissions. Since this file possibly get changed often it is an good idea to make it writable as well. 
-It can not be assured that other user are not needing this file so it should be okay to grant them read permissions. All in all it ends up to the following permissions denoted numerically: private key 400, server certificate 444 and configuration files 744. 
+It can not be assured that other user are not needing this file so it should be okay to grant them read permissions. All in all it ends up to the following permissions denoted numerically: private key 400, server certificate 444 and configuration files 744. \cite {linuxsecurity} 
 \newline
 
 \noindent
-Wrong file permissions are a risk when the webapplication running on the server is vulnerable to file inclusion or file disclosure attacks. With the help of this and in the case of wrong file permissions an attacker could as example read the private key and fake therefore our identity to other applications. It would be even worser when the attacker is able to write to files since then all doors to manipulate our certificates or configuration are opened.
+Wrong file permissions are a risk when the web application running on the server is vulnerable to file inclusion or file disclosure attacks. With the help of this and in the case of wrong file permissions an attacker could as an example read the private key and fake our identity to other applications. This would be even worse if the attacker is able to write to files, then the attacker is free to manipulate our certificates or configurations \cite{InclDiscl}.
 \newline
 
 
