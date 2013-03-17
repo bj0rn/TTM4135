@@ -17,16 +17,16 @@ Php install.
 \newblock \url{http://www.win.tue.nl/hashclash/rogue-ca/}.
 \newblock Online, accessed 17 - march - 2013.
 
+\bibitem{linuxsecurity}
+{Bill Keys}.
+\newblock File permissions and access control.
+\newblock \url{http://www.linuxsecurity.com/content/view/133913/171/}.
+\newblock Online, accessed 17 - march - 2013.
+
 \bibitem{md5Study}
 {J. Black, M. Cochran, T. Highland}.
 \newblock A study of the {MD5} attacks: Insights and improvements.
 \newblock \url{http://www.cs.colorado.edu/~jrblack/papers/md5e-full.pdf}.
-\newblock Online, accessed 17 - march - 2013.
-
-\bibitem{linuxsecurity}
-Bill keys.
-\newblock File permissions and access control.
-\newblock \url{http://www.linuxsecurity.com/content/view/133913/171/}.
 \newblock Online, accessed 17 - march - 2013.
 
 \bibitem{cipher}
