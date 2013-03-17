@@ -6,7 +6,7 @@ Nist recommendation.
 \newblock Online, accessed 16 - march - 2013.
 
 \bibitem{phpinstall}
-Php install.
+{PHP} install.
 \newblock \url{http://www.php.net/manual/en/install.php}.
 \newblock Online, accessed 17 - march - 2013.
 
@@ -18,7 +18,7 @@ Php install.
 \newblock Online, accessed 17 - march - 2013.
 
 \bibitem{linuxsecurity}
-{Bill Keys}.
+{B. Keys}.
 \newblock File permissions and access control.
 \newblock \url{http://www.linuxsecurity.com/content/view/133913/171/}.
 \newblock Online, accessed 17 - march - 2013.
@@ -38,7 +38,7 @@ Networking4All.
 
 \bibitem{md5Networking}
 Networking4All.
-\newblock Weaknesses in ssl certificates with a md5 signature algorithm.
+\newblock Weaknesses in {SSL} certificates with a {MD5} signature algorithm.
 \newblock
   \url{http://www.networking4all.com/en/support/tools/site+check/md5+algorithm/}.
 \newblock Online, accessed 16 - march - 2013.
@@ -77,7 +77,7 @@ WikiBooks.
 
 \bibitem{md5Wiki}
 Wikipedia.
-\newblock Md5.
+\newblock {MD5}.
 \newblock \url{http://en.wikipedia.org/wiki/MD5}, 2013.
 \newblock Online, accessed 16 - march - 2013.
 
