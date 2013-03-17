@@ -14,7 +14,7 @@ The SSL certificate has a 2048-bit length private key. This is the same as the r
 \newline
 
 \noindent
-Unfortunately the default message digest algorithm, MD5, was used to sign our certificates. Previous research has shown that is possible to produce collisions with relatively ease. A group of researchers described how a pair of files having the same MD5 hash could be created. Later other researchers showed with using this technique how someone could generate a fraudulent SSL certificate derived from a valid one. They showed that the certificate will be accepted as valid. Due these advances MD5 is considered cryptographic broken and unsuitable for further use. We need to emphasize that no wild attacks has been reported using this technique, but it should still be avoided \cite {md5Wiki, md5Networking}.
+Unfortunately the default message digest algorithm, MD5, was used to sign our certificates. Previous research has shown that is possible to produce collisions with relatively ease. A group of researchers described how a pair of files having the same MD5 hash could be created \cite{md5Study}. Later other researchers showed with using this technique how someone could generate a fraudulent SSL certificate derived from a valid one. They showed that the certificate will be accepted as valid. \cite{md5Harmful} Due these advances MD5 is considered cryptographic broken and unsuitable for further use. We need to emphasize that no wild attacks has been reported using this technique, but it should still be avoided \cite {md5Wiki, md5Networking}.
 \newline
 
 \noindent
