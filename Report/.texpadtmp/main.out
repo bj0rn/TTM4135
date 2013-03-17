@@ -2,9 +2,9 @@
 \BOOKMARK [1][-]{section.2}{Results}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Part 1: Certificate authority}{section.2}% 3
 \BOOKMARK [2][-]{subsection.2.2}{Part 2: Access control and Apache}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Part 3: Writing PHP application}{section.2}% 5
-\BOOKMARK [2][-]{subsection.2.4}{Part 4: Setting up a subversion repository}{section.2}% 6
-\BOOKMARK [1][-]{section.3}{Discussion}{}% 7
-\BOOKMARK [2][-]{subsection.3.1}{Certificates and SSL}{section.3}% 8
-\BOOKMARK [2][-]{subsection.3.2}{SVN repository}{section.3}% 9
+\BOOKMARK [2][-]{subsection.2.3}{Part 3: Writing a PHP application}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Discussion}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Certificates and SSL}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Our application}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{SVN repository}{section.3}% 9
 \BOOKMARK [1][-]{section.4}{Conclusion}{}% 10

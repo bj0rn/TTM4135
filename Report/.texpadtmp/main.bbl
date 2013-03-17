@@ -1,22 +1,84 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{nisc}
 Nist recommendation.
+\newblock \url{http://www.keylength.com/en/4/}.
 \newblock Online, accessed 16 - march - 2013.
+
+\bibitem{phpinstall}
+Php install.
+\newblock \url{http://www.php.net/manual/en/install.php}.
+\newblock Online, accessed 17 - march - 2013.
+
+\bibitem{md5Harmful}
+Jacob Appelbaum Arjen Lenstra David Molnar Dag Arne Osvik Benne de~Weger
+  Alexander~Sotirov, Marc~Stevens.
+\newblock Md5 considered harmful today - creating a rogue ca certificate.
+\newblock \url{http://www.win.tue.nl/hashclash/rogue-ca/}.
+\newblock Online, accessed 17 - march - 2013.
+
+\bibitem{md5Study}
+T.~Highland J.~Black, M.~Cochran.
+\newblock A study of the md5 attacks: Insights and improvements.
+\newblock \url{http://www.cs.colorado.edu/~jrblack/papers/md5e-full.pdf}.
+\newblock Online, accessed 17 - march - 2013.
+
+\bibitem{linuxsecurity}
+Bill keys.
+\newblock File permissions and access control.
+\newblock \url{http://www.linuxsecurity.com/content/view/133913/171/}.
+\newblock Online, accessed 17 - march - 2013.
 
 \bibitem{cipher}
 Networking4All.
 \newblock Cipher suit.
+\newblock
+  \url{http://www.networking4all.com/en/support/tools/site+check/cipher+suite/}.
 \newblock Online, accessed 16 - march - 2013.
 
 \bibitem{md5Networking}
 Networking4All.
 \newblock Weaknesses in ssl certificates with a md5 signature algorithm.
+\newblock
+  \url{http://www.networking4all.com/en/support/tools/site+check/md5+algorithm/}.
 \newblock Online, accessed 16 - march - 2013.
+
+\bibitem{sqlinjection}
+OWASP.
+\newblock Sql injection prevention cheat sheet.
+\newblock
+  \url{https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet}.
+\newblock Online, accessed 17 - march - 2013.
+
+\bibitem{xss}
+OWASP.
+\newblock Xxs (cross site scripting) prevention cheat sheet.
+\newblock
+  \url{https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet}.
+\newblock Online, accessed 17 - march - 2013.
+
+\bibitem{quelle1}
+Apache software fundation.
+\newblock \url{http://httpd.apache.org/download.cgi}.
+\newblock Online, accessed 16 - march - 2013.
+
+\bibitem{quelle2}
+Apache software fundation.
+\newblock Compiling and installing.
+\newblock \url{http://httpd.apache.org/docs/2.4/install.html}.
+\newblock Online, accessed 16 - march - 2013.
+
+\bibitem{InclDiscl}
+WikiBooks.
+\newblock Web application security guide/file inclusion and disclosure.
+\newblock
+  \url{http://en.wikibooks.org/wiki/Web_Application_Security_Guide/File_inclusion_and_disclosure}.
+\newblock Online, accessed 17 - march - 2013.
 
 \bibitem{md5Wiki}
 Wikipedia.
-\newblock Md5, 2013.
+\newblock Md5.
+\newblock \url{http://en.wikipedia.org/wiki/MD5}, 2013.
 \newblock Online, accessed 16 - march - 2013.
 
 \end{thebibliography}

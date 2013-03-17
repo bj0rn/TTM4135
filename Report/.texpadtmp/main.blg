@@ -5,45 +5,62 @@ A level-1 auxiliary file: title_page.aux
 The style file: plain.bst
 Database file #1: ../bibliography.bib
 Warning--to sort, need author or key in nisc
-You've used 4 entries,
+Too many commas in name 1 of "Alexander Sotirov, Marc Stevens, Jacob Appelbaum, Arjen Lenstra, David Molnar, Dag Arne Osvik, Benne de Weger" for entry md5Harmful
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Alexander Sotirov, Marc Stevens, Jacob Appelbaum, Arjen Lenstra, David Molnar, Dag Arne Osvik, Benne de Weger" for entry md5Harmful
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Alexander Sotirov, Marc Stevens, Jacob Appelbaum, Arjen Lenstra, David Molnar, Dag Arne Osvik, Benne de Weger" for entry md5Harmful
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Alexander Sotirov, Marc Stevens, Jacob Appelbaum, Arjen Lenstra, David Molnar, Dag Arne Osvik, Benne de Weger" for entry md5Harmful
+while executing---line 1049 of file plain.bst
+Warning--to sort, need author or key in phpinstall
+Too many commas in name 1 of "Alexander Sotirov, Marc Stevens, Jacob Appelbaum, Arjen Lenstra, David Molnar, Dag Arne Osvik, Benne de Weger" for entry md5Harmful
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Alexander Sotirov, Marc Stevens, Jacob Appelbaum, Arjen Lenstra, David Molnar, Dag Arne Osvik, Benne de Weger" for entry md5Harmful
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Alexander Sotirov, Marc Stevens, Jacob Appelbaum, Arjen Lenstra, David Molnar, Dag Arne Osvik, Benne de Weger" for entry md5Harmful
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Alexander Sotirov, Marc Stevens, Jacob Appelbaum, Arjen Lenstra, David Molnar, Dag Arne Osvik, Benne de Weger" for entry md5Harmful
+while executing---line 1090 of file plain.bst
+You've used 13 entries,
             2118 wiz_defined-function locations,
-            512 strings with 4215 characters,
-and the built_in function-call counts, 787 in all, are:
-= -- 69
-> -- 22
+            552 strings with 5667 characters,
+and the built_in function-call counts, 2697 in all, are:
+= -- 264
+> -- 79
 < -- 0
-+ -- 10
-- -- 6
-* -- 23
-:= -- 125
-add.period$ -- 11
-call.type$ -- 4
-change.case$ -- 15
++ -- 36
+- -- 22
+* -- 68
+:= -- 444
+add.period$ -- 49
+call.type$ -- 13
+change.case$ -- 49
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 28
-empty$ -- 90
-format.name$ -- 6
-if$ -- 173
+cite$ -- 15
+duplicate$ -- 91
+empty$ -- 289
+format.name$ -- 22
+if$ -- 601
 int.to.chr$ -- 0
-int.to.str$ -- 4
+int.to.str$ -- 13
 missing$ -- 0
-newline$ -- 22
-num.names$ -- 6
-pop$ -- 42
+newline$ -- 78
+num.names$ -- 22
+pop$ -- 129
 preamble$ -- 1
-purify$ -- 11
+purify$ -- 37
 quote$ -- 0
-skip$ -- 25
+skip$ -- 65
 stack$ -- 0
-substring$ -- 20
-swap$ -- 4
+substring$ -- 66
+swap$ -- 13
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 16
-warning$ -- 1
-while$ -- 6
-width$ -- 5
-write$ -- 37
-(There was 1 warning)
+type$ -- 52
+warning$ -- 2
+while$ -- 22
+width$ -- 15
+write$ -- 140
+(There were 8 error messages)
