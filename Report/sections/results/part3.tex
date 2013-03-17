@@ -2,11 +2,10 @@
 
 
 \noindent
-As a result of part 3 we made a web site in PHP that uses both username/password and X.509 certificates to validate clients. We implemented next functions: login to web site using user and login or sessions(Using sessions is convenient for user), signup new users , access to different parts of sites by certificates, downloading report file.
-\newline
+In part 3 we have made a small php application with several functions. First of all it is possible to login to the site using username and password and sessions are used to remember logged in users. We allow new users to sign up to our page and granting access to different parts of the site correspondingly to X.509 certificates, furthermore it is possible to download this report file in an restricted area. \newline
 
 \noindent
-First we installed PHP to apache. For this  we used manual \cite {Quelle3}. For testing PHP we used this function: {\bf <?php phpinfo();?>}
+First we installed PHP to apache. For this  we used manual [5,  PHP Manual.http://www.php.net/manual/en/]. For testing PHP we used this function: {\bf <?php phpinfo();?>}
 \newline
 
 \noindent
@@ -14,13 +13,17 @@ When PHP was installed on apache we started  create table  with username and pas
 \newline
 
 \noindent
-For login page we used cookie where we storing username that is helpful for user when he login to page. After login we setuping sessions variables (Using session is good for user because next time he don’t need to login again when when visiting this page). After login user allowed to download file report . Signup page accessible  only for user with valid SSL certificates. On this page we can add or delete user.
+For login page we used cookie where we storing username that is helpful for user when he login to page. After login we setuping sessions variables (Using session is good for user because next time he don’t need to login again when when visiting this page). After login user allowed to download file report . Signup page accesseble  only for user with valid ssl certificates. On this page we can add or delete user.
 \newline
 
-\noindent
-{\bf Q5. What kind of malicious attacks is your web application (PHP) vulnerable to? Describe them briefly, and point out what countermeasures you have
+{\bf Q5. What kind of malicious attacks is your web application (PHP) vulnerable to? Describe them brifly, and point out what countermeasures you have
 developed in your code to prevent such attacks.}
 \newline
+\noindent
+Since the application uses a mysql-database to save certain user data, the application is naturally vulnerable against sql injection attacks, which are used to read, manipulate or delete entrys from the database. To prevent those attacks we are using prepared SQL-statements. Furthermore we are sanitizing all user input via preg_match() with a self-defined whitelist. The allowed signs are digits, all normal characters and the special characters @,!,.,-,_,.and +. This whitelist offers also protection against cross site scripting attacks since we are not allowing signs which are mandatory to start such an attack. Cross Site Scripting means that malicious javascript code is injected to the webapplication and gets executed on the clients pc. \newline
+With protection against cross site scripting we have also improved protection against session hijacking since this kind attacks often rely on such a vulnerability. During a session hijacking attack the information which are used to remember a certain user are stealed and used by an attacker to access the application with the rights of the user. Unfortunately we cannot offer protection against other client side attacks which result in a leak of the session information. Nevertheless we are saving the user ip within the session and validate this to prevent hijacking via the internet, however attacks within the same network are still feasible.
+\newline
+Other common kinds of vulnerabilities in php application are file inclusions and file disclosure vulnerabilities allowing an attacker to add or read files on the server. Our application is secure against them since we are using hardcoded html links instead of the php include function and also a hardcoded filename for the download function.
 
 
 
