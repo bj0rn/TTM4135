@@ -5,15 +5,14 @@
 In part 3 we have made a small php application with several functions. First of all it is possible to login to the site using username and password and sessions are used to remember logged in users. We allow new users to sign up to our page and granting access to different parts of the site correspondingly to X.509 certificates, furthermore it is possible to download this report file in an restricted area. \newline
 
 \noindent
-First we installed PHP to apache. For this  we used manual [5,  PHP Manual.http://www.php.net/manual/en/]. For testing PHP we used this function: {\bf <?php phpinfo();?>}
-\newline
+In order to realize this website we had to install PHP to the apache webserver. We used the official php manual to do this \cite{phpinstall}  and tested our php engine with the phpinfo() function.\newline
 
 \noindent
 When PHP was installed on apache we started  create table  with username and password  in MySQL DataBase for our project. After we made all preparation work we started create php application. 
 \newline
 
 \noindent
-For login page we used cookie where we storing username that is helpful for user when he login to page. After login we setuping sessions variables (Using session is good for user because next time he don’t need to login again when when visiting this page). After login user allowed to download file report . Signup page accesseble  only for user with valid ssl certificates. On this page we can add or delete user.
+On the login page we used a cookie to store the username which is helpful for the user when he wants to login several times from the same device. After a successful login we are setting up the sessions variables. The use of sessions is also comfortable for the user since he has not to login again when he is visiting the site again from the same device without a previous logout. Logged in users  are allowed to download the report file . The signup page is only accessible for users with valid ssl certificate. On this page certified group members can add or delete users.
 \newline
 
 {\bf Q5. What kind of malicious attacks is your web application (PHP) vulnerable to? Describe them brifly, and point out what countermeasures you have
