@@ -1,21 +1,21 @@
-\subsection {PHP and MySQL}
-Our PHP application connected to the MySQL database builds the surface for users visiting our side. Since we developed it by ourself and the webapplication is often the first attack target for people with malicious intend we had to care especially here about the used security mechanisms.
-
+\subsection {Our application}
+Our PHP application which is connected to the MySQL database builds the surface for users visiting our site. Since we developed it by ourself and webapplications are often the first attack target for people with malicious intent we had to care especially here about the used security mechanisms.
+\newline
 \noindent
 {\bf Q5. What kind of malicious attacks is your web application (PHP) vulnerable to? Describe them briefly, and point out what countermeasures you have
 developed in your code to prevent such attacks.}
 \newline
 
 \noindent
-Since the application uses a MySQL database to save certain user data, the application is naturally vulnerable against sql injection attacks, which are used to read, manipulate or delete entries from the database. To prevent those attacks we are using prepared SQL-statements. If an attacker somehow is able to get our database all user passwords are hashed with sha-512 to make it difficult to use this data. Furthermore we are sanitizing all user input via $preg_match()$ with a self-defined whitelist. The allowed signs are digits, all normal characters and the special characters $@,!,.,-,_,.and +$. This whitelist offers also protection against cross site scripting attacks since we are not allowing signs which are mandatory to start such an attack. Cross Site Scripting means that malicious javascript code is injected to the webapplication and gets executed on the clients pc. \cite {sqlinjection, xss}
+Since the application uses a MySQL database to save certain user data, the application is naturally vulnerable against SQL injection attacks, which are used to read, manipulate or delete entries from the database. To prevent those attacks we are using prepared SQL statements. If an attacker somehow is able to get our database all user passwords are salted and hashed with SHA-512 to make it difficult to use this data. Furthermore we are sanitizing all user input via $preg\_match()$ with a self-defined whitelist. The allowed signs are digits, all normal characters and the special characters @,!,.,-,\_,. and +. This whitelist offers also protection against cross site scripting (XSS) attacks since we are not allowing signs which are mandatory to start such an attack. XSS means that malicious javascript code is injected to the webapplication and gets executed in the browser of a client. \cite {sqlinjection, xss}
 \newline
 
 \noindent
-With protection against cross site scripting we have also improved protection against session hijacking since this kind attacks often rely on such a vulnerability. During a session hijacking attack the information which are used to remember a certain user are stealed and used by an attacker to access the application with the rights of the user. Unfortunately we cannot offer protection against other client side attacks which result in a leak of the session information. Nevertheless we are saving the user ip within the session and validate this to prevent hijacking via the internet, however attacks within the same network are still feasible.
+With protection against XSS we have also improved our protection against session hijacking since this kind attacks often rely on a XSS vulnerability. During a session hijacking attack the information which are used to remember a certain user are stealed and used by an attacker to access the application with the rights of the user. Unfortunately we cannot offer protection against other client side attacks resulting in a leak of the session information. Nevertheless we are saving the users' IP within the session and validate this on every page to prevent hijacking via the internet, however attacks within the same network are still feasible.
 \newline
 
 \noindent
-Other common kinds of vulnerabilities in php application are file inclusions and file disclosure vulnerabilities allowing an attacker to add or read files on the server. Our application is secure against them since we are using hardcoded html links instead of the php include function and also a hardcoded filename for the download function.
+Further common vulnerabilities in PHP applications are file inclusions and file disclosure vulnerabilities allowing an attacker to execute, add or read files on the server. Our application is secure against them since we are using hardcoded HTML links instead of the PHP include function and also a hardcoded filename for the download function.
 
 
 
