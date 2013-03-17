@@ -1,5 +1,22 @@
 \subsection {Part 3: Writing PHP application}
 
+
+\noindent
+As a result of part 3 we made a web site in PHP that uses both username/password and X.509 certificates to validate clients. We implemented next functions: login to web site using user and login or sessions(Using sessions is convinient for user), signup new users , access to different parts of sites by certificates, downloading reprort file.
+\newline
+
+\noindent
+First we installed PHP to apache. For this  we used manual [5,  PHP Manual.http://www.php.net/manual/en/]. For testing PHP we used this function: {\bf <?php phpinfo();?>}
+\newline
+
+\noindent
+When PHP was installed on apache we started  create table  with username and password  in MySQL DataBase for our project. After we made all preparation work we started create php application. 
+\newline
+
+\noindent
+For login page we used cookie where we storing username that is helpful for user when he login to page. After login we setuping sessions variables (Using session is good for user because next time he don’t need to login again when when visiting this page). After login user allowed to download file report . Signup page accesseble  only for user with valid ssl certificates. On this page we can add or delete user.
+\newline
+
 {\bf Q5. What kind of malicious attacks is your web application (PHP) vulnerable to? Describe them brifly, and point out what countermeasures you have
 developed in your code to prevent such attacks.}
 
