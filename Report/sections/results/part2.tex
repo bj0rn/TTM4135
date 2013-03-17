@@ -66,3 +66,11 @@ Web servers using weak cryptography are subject to these, and other, attacks:
 \end {itemize}
 
 
+\noindent
+Furthermore we installed and configured a fully operational SVN repository during the completion of this part.
+Using the apache servers built-in authentication methods, the repository is only accessible to users that can provide valid usernames and passwords. The repository is also only accessible over an https connection, which protects the integrity of the communication. This authentication method is vulnerable for bruteforcing but a sufficient password strength makes this kind of attack inefficient. Since we use a SSL encrypted connection to submit this data eavesdropping is also hard to accomplish. The users and password are created with the htpasswd tool with the -s flag and saved on the webserver. This flag enables the use of SHA encryption for the passwords instead the default used md5.
+\newline
+
+
+
+
